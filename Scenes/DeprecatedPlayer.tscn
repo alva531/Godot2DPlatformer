@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cj28rc04d24h0"]
 
-[ext_resource type="Script" uid="uid://cewibdlv4i32l" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="Script" uid="uid://cewibdlv4i32l" path="res://Scripts/deprecated_player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bc1jc5luxw5el" path="res://Assets/Retro-Lines-16x16/Player.png" id="1_rpqav"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyqiw"]
 radius = 3.0
-height = 12.07
+height = 13.96
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpqav"]
 atlas = ExtResource("1_rpqav")
@@ -97,7 +97,7 @@ animations = [{
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220185989]
-position = Vector2(0, 1.925)
+position = Vector2(0, 1.02)
 shape = SubResource("CapsuleShape2D_kyqiw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1747062866]
@@ -105,3 +105,11 @@ sprite_frames = SubResource("SpriteFrames_5ixxa")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.21426874
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=2099865268]
+wait_time = 0.12
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=1112992643]
+wait_time = 0.08
+one_shot = true

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cuhk58x4heoc8"]
+
+[ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_xgxfi"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_5f3p6"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_jv26f"]
+[ext_resource type="PackedScene" uid="uid://d3vql323k61dc" path="res://Scenes/Maps/grass_01.tscn" id="5_cyadu"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_rb0md"]
+[ext_resource type="PackedScene" uid="uid://p2hk12qbo5" path="res://Scenes/Components/DoorArea2D.tscn" id="6_xgxfi"]
+
+[sub_resource type="Resource" id="Resource_xrdnt"]
+script = ExtResource("4_jv26f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6444e"]
+size = Vector2(689, 383)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
+size = Vector2(17, 34)
+
+[node name="Level1" type="Node2D" unique_id=1972630351]
+
+[node name="CharacterBody2D2" parent="." unique_id=651586792 instance=ExtResource("2_xgxfi")]
+position = Vector2(-290, 120)
+gravity = 18.0
+maxGravity = 22.8
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1264322962 node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-290, 120)
+script = ExtResource("3_5f3p6")
+follow_mode = 1
+follow_target = NodePath("../CharacterBody2D2")
+zoom = Vector2(1.665, 1.665)
+tween_resource = SubResource("Resource_xrdnt")
+follow_damping = true
+follow_damping_value = Vector2(0.06, 0.06)
+draw_limits = true
+limit_target = NodePath("../CameraConfiner/CollisionShape2D")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1243897410]
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(39.945953, 195.5946)
+zoom = Vector2(1.665, 1.665)
+limit_left = -306
+limit_top = 1
+limit_right = 383
+limit_bottom = 384
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1652587311]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_rb0md")
+
+[node name="CameraConfiner" type="StaticBody2D" parent="." unique_id=642297949]
+visible = false
+position = Vector2(27, 376)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraConfiner" unique_id=1165799363]
+position = Vector2(11.5, -183.5)
+shape = SubResource("RectangleShape2D_6444e")
+disabled = true
+
+[node name="grass_01" parent="." unique_id=184413619 instance=ExtResource("5_cyadu")]
+
+[node name="DoorArea2D" parent="." unique_id=1499915062 instance=ExtResource("6_xgxfi")]
+position = Vector2(383, 160)
+connectedRoom = "res://Scenes/Levels/level_2.tscn"
+playerPos = Vector2(-291, 168)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2D" unique_id=1162920464]
+shape = SubResource("RectangleShape2D_5f3p6")

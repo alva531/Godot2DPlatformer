@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://caygih315h4mq"]
+
+[ext_resource type="Script" uid="uid://djtgc5awqgl6d" path="res://Scripts/player.gd" id="1_dn4j3"]
+[ext_resource type="Texture2D" uid="uid://bc1jc5luxw5el" path="res://Assets/Retro-Lines-16x16/Player.png" id="2_kfthp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfthp"]
+size = Vector2(8, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpqav"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyqiw"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gntrk"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewec"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixxa"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52ee3"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhhdu"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_megsn"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoq75"]
+atlas = ExtResource("2_kfthp")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ixxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpqav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyqiw")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gntrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewec")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixxa")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52ee3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhhdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_megsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoq75")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=909110901 groups=["player"]]
+texture_filter = 1
+script = ExtResource("1_dn4j3")
+jumpHeight = -400.0
+gravity = 20.0
+maxGravity = 24.8
+maxSpeed = 175.0
+acceleration = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220185989]
+position = Vector2(0, 1.4999998)
+shape = SubResource("RectangleShape2D_kfthp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1747062866]
+sprite_frames = SubResource("SpriteFrames_5ixxa")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.21426874
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=2099865268]
+wait_time = 0.08
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=1112992643]
+wait_time = 0.08
+one_shot = true
+
+[node name="Left_HeadNudge" type="RayCast2D" parent="." unique_id=676521154]
+position = Vector2(-4, -5)
+target_position = Vector2(0, -2)
+hit_from_inside = true
+
+[node name="Left_HeadNudge2" type="RayCast2D" parent="." unique_id=1422632988]
+position = Vector2(-1, -5)
+target_position = Vector2(0, -2)
+hit_from_inside = true
+
+[node name="Right_HeadNudge" type="RayCast2D" parent="." unique_id=637977647]
+position = Vector2(4, -5)
+target_position = Vector2(0, -2)
+hit_from_inside = true
+
+[node name="Right_HeadNudge2" type="RayCast2D" parent="." unique_id=1482252315]
+position = Vector2(1, -5)
+target_position = Vector2(0, -2)
+hit_from_inside = true
+
+[node name="Right_LedgeHop" type="RayCast2D" parent="." unique_id=1047568703]
+position = Vector2(4, 6)
+target_position = Vector2(2, 0)
+hit_from_inside = true
+
+[node name="Right_LedgeHop2" type="RayCast2D" parent="." unique_id=2116889291]
+position = Vector2(4, 4)
+target_position = Vector2(2, 0)
+hit_from_inside = true
+
+[node name="Left_LedgeHop" type="RayCast2D" parent="." unique_id=455172227]
+position = Vector2(-4, 6)
+target_position = Vector2(-2, 0)
+hit_from_inside = true
+
+[node name="Left_LedgeHop2" type="RayCast2D" parent="." unique_id=24188385]
+position = Vector2(-4, 4)
+target_position = Vector2(-2, 0)
+hit_from_inside = true
