@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("left"):
 		$AnimatedSprite2D.flip_h = true
 	
+	
 	if is_on_floor():
 		coyoteTimeActivated = false
 		gravity = lerp(gravity, 12.0, 12.0 * delta)
@@ -38,6 +39,11 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.animation = "run"
 		else:
 			animated_sprite_2d.animation = "idle"
+			
+		if Input.is_action_just_pressed("down"):
+			set_collision_mask_value(5, false)
+		else:
+			set_collision_mask_value(5, true)
 	else:
 		animated_sprite_2d.animation = "jump"
 		if coyoteTimer.is_stopped() and !coyoteTimeActivated:

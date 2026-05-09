@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dd5mf2f3abn5j"]
+
+[ext_resource type="PackedScene" uid="uid://bddogupyl3apo" path="res://Scenes/Zones/act1_01.tscn" id="1_gm2ak"]
+[ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_1bsl4"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_fmmsx"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_c3dre"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_n7phb"]
+
+[sub_resource type="Resource" id="Resource_qrn0q"]
+script = ExtResource("5_n7phb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm2ak"]
+size = Vector2(1275, 898)
+
+[node name="LevelTest" type="Node2D" unique_id=1451326060]
+
+[node name="act1_01" parent="." unique_id=1678939227 instance=ExtResource("1_gm2ak")]
+
+[node name="CharacterBody2D" parent="." unique_id=909110901 instance=ExtResource("2_1bsl4")]
+position = Vector2(53, 168)
+gravity = 18.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1202030405]
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(200.4, 168)
+zoom = Vector2(2.5, 2.5)
+limit_left = -30
+limit_top = -226
+limit_right = 1245
+limit_bottom = 672
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=2081485562]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_fmmsx")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." unique_id=1193870169 node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(53, 168)
+script = ExtResource("4_c3dre")
+follow_mode = 5
+follow_target = NodePath("../CharacterBody2D")
+zoom = Vector2(2.5, 2.5)
+tween_resource = SubResource("Resource_qrn0q")
+draw_limits = true
+limit_target = NodePath("../Confiner/Confiner")
+
+[node name="Confiner" type="Node2D" parent="." unique_id=1884496895]
+
+[node name="Confiner" type="CollisionShape2D" parent="Confiner" unique_id=1797426536]
+position = Vector2(607.5, 223)
+shape = SubResource("RectangleShape2D_gm2ak")
+disabled = true
