@@ -56,6 +56,7 @@ limit_bottom = 212.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D" unique_id=785786628]
+visible = false
 position = Vector2(3.5, 0)
 shape = SubResource("RectangleShape2D_1bsl4")
 
