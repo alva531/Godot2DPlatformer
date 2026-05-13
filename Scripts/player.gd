@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyoteTimer: Timer = $CoyoteTimer
 @onready var jumpBufferTimer: Timer = $JumpBufferTimer
@@ -15,6 +16,8 @@ var coyoteTimeActivated: bool = false
 @export var friction: float = 10
 
 func _ready() -> void:
+	add_to_group("player")
+	set_collision_mask_value(5, true)
 	if RoomChangeGlobal.activate:
 		global_position = RoomChangeGlobal.playerPos
 		if RoomChangeGlobal.playerJumpOnEnter:
@@ -42,8 +45,9 @@ func _physics_process(delta: float) -> void:
 			
 		if Input.is_action_just_pressed("down"):
 			set_collision_mask_value(5, false)
-		else:
+			await get_tree().create_timer(0.2).timeout
 			set_collision_mask_value(5, true)
+			
 	else:
 		animated_sprite_2d.animation = "jump"
 		if coyoteTimer.is_stopped() and !coyoteTimeActivated:

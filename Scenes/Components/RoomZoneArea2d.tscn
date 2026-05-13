@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://vaf1xkb610xw"]
+
+[ext_resource type="Script" uid="uid://cxy0oaxvfn6vc" path="res://Scripts/RoomZoneArea2D.gd" id="1_clttc"]
+
+[node name="RoomZoneArea2D" type="Area2D" unique_id=1087737382]
+script = ExtResource("1_clttc")
