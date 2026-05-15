@@ -9,15 +9,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjjwh"]
 size = Vector2(544, 553)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xv1d"]
+size = Vector2(520, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_454ho"]
+size = Vector2(656, 168)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ggw1"]
 size = Vector2(32, 32)
 
 [node name="Zone_02" type="Node2D" unique_id=1053461333]
 
 [node name="act1_02" parent="." unique_id=139764031 instance=ExtResource("1_0mo07")]
-
-[node name="CharacterBody2D" parent="." unique_id=909110901 instance=ExtResource("2_e4qq7")]
-position = Vector2(96, -24)
 
 [node name="RoomZoneArea2D" type="Area2D" parent="." unique_id=1971743522]
 monitorable = false
@@ -35,6 +38,40 @@ metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 position = Vector2(-176, 131.5)
 shape = SubResource("RectangleShape2D_kjjwh")
 
+[node name="RoomZoneArea2D2" type="Area2D" parent="." unique_id=210018659]
+position = Vector2(-176, 131.5)
+monitorable = false
+script = ExtResource("3_joahx")
+zoom = Vector2(4, 4)
+follow_player = true
+limit_camera = true
+limit_left = -968.0
+limit_top = -472.0
+limit_right = -448.0
+limit_bottom = 176.0
+metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D2" unique_id=830849428]
+position = Vector2(-532, -279.5)
+shape = SubResource("RectangleShape2D_4xv1d")
+
+[node name="RoomZoneArea2D3" type="Area2D" parent="." unique_id=1476500537]
+position = Vector2(-776, -576)
+monitorable = false
+script = ExtResource("3_joahx")
+zoom = Vector2(4, 4)
+follow_player = true
+limit_camera = true
+limit_left = -968.0
+limit_top = -640.0
+limit_right = -312.0
+limit_bottom = -472.0
+metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D3" unique_id=1217089490]
+position = Vector2(136, 20)
+shape = SubResource("RectangleShape2D_454ho")
+
 [node name="RoomZoneCamera2D" parent="." unique_id=99629313 instance=ExtResource("4_4xv1d")]
 position = Vector2(-101, -25)
 zoom = Vector2(4.5, 4.5)
@@ -48,3 +85,6 @@ playerPos = Vector2(-64, 168)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2D" unique_id=121520812]
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_7ggw1")
+
+[node name="CharacterBody2D" parent="." unique_id=909110901 instance=ExtResource("2_e4qq7")]
+position = Vector2(99, -24)

@@ -7,6 +7,7 @@ extends CharacterBody2D
 var coyoteTimeActivated: bool = false
 
 @export var jumpHeight: float = -250.0
+@export var jumpPadHeight: float = -600
 @export var gravity: float = 12.0
 @export var maxGravity: float = 14.5
 @export var speed: float = -250.0
@@ -14,6 +15,9 @@ var coyoteTimeActivated: bool = false
 @export var maxSpeed: float = 100
 @export var acceleration: float = 8
 @export var friction: float = 10
+
+@export var MAX_JUMPS: int = 2
+var jumpsDone: int = 0
 
 func _ready() -> void:
 	add_to_group("player")
@@ -34,9 +38,11 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("left"):
 		$AnimatedSprite2D.flip_h = true
 	
-	
 	if is_on_floor():
+		
 		coyoteTimeActivated = false
+		jumpsDone = 0
+		
 		gravity = lerp(gravity, 12.0, 12.0 * delta)
 		if x_input != 0:
 			animated_sprite_2d.animation = "run"
@@ -49,6 +55,7 @@ func _physics_process(delta: float) -> void:
 			set_collision_mask_value(5, true)
 			
 	else:
+		jumpsDone += 1
 		animated_sprite_2d.animation = "jump"
 		if coyoteTimer.is_stopped() and !coyoteTimeActivated:
 			coyoteTimer.start()
@@ -63,8 +70,9 @@ func _physics_process(delta: float) -> void:
 		if jumpBufferTimer.is_stopped():
 			jumpBufferTimer.start()
 			
-	if !jumpBufferTimer.is_stopped() and (!coyoteTimer.is_stopped() or is_on_floor()):
+	if !jumpBufferTimer.is_stopped() and (!coyoteTimer.is_stopped() or jumpsDone < MAX_JUMPS):
 		velocity.y = jumpHeight
+		jumpsDone += 1
 		jumpBufferTimer.stop()
 		coyoteTimer.stop()
 		coyoteTimeActivated = true

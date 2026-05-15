@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dwx454pcp6vm7"]
+
+[ext_resource type="Script" uid="uid://bvm8xm3en426f" path="res://Scripts/JumpPad.gd" id="1_b2pxq"]
+[ext_resource type="Texture2D" uid="uid://c3rpvmf24874h" path="res://Assets/Retro-Lines-16x16/Extras.png" id="1_d8ldy"]
+
+[sub_resource type="Animation" id="Animation_d8ldy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b2pxq"]
+resource_name = "activate"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.75), Vector2(1, 1.15), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_revr7"]
+_data = {
+&"RESET": SubResource("Animation_d8ldy"),
+&"activate": SubResource("Animation_b2pxq")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_revr7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fqmh"]
+size = Vector2(16, 4)
+
+[node name="JumpPad" type="Node2D" unique_id=1476078697]
+script = ExtResource("1_b2pxq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837858448]
+texture_filter = 1
+position = Vector2(0, 8)
+texture = ExtResource("1_d8ldy")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=294116788]
+libraries/ = SubResource("AnimationLibrary_revr7")
+speed_scale = 1.5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=462286807]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=90623061]
+shape = SubResource("RectangleShape2D_revr7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=469105704]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1529156768]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_0fqmh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

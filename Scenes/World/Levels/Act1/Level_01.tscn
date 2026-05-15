@@ -163,5 +163,4 @@ connectedRoom = "D:/GodotProjects/Godot2DPlatformer/Scenes/World/Levels/Act1/Lev
 playerPos = Vector2(96, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2D" unique_id=1177464753]
-position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_r0vw5")
