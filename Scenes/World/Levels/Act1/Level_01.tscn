@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dd5mf2f3abn5j"]
 
-[ext_resource type="PackedScene" uid="uid://bddogupyl3apo" path="res://Scenes/World/Zones/Act1/act1_01.tscn" id="1_foke7"]
+[ext_resource type="PackedScene" uid="uid://vc1oan1d5cyy" path="res://LDtk/levels/Level_0.scn" id="1_r0vw5"]
 [ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_geum0"]
 [ext_resource type="PackedScene" uid="uid://ciwfk1bgh0m3g" path="res://Scenes/Components/RoomZoneCamera2D.tscn" id="3_r0vw5"]
 [ext_resource type="Script" uid="uid://cxy0oaxvfn6vc" path="res://Scripts/RoomZoneArea2D.gd" id="4_xph1i"]
@@ -28,8 +28,10 @@ size = Vector2(672, 224)
 size = Vector2(32, 32)
 
 [node name="LevelTest" type="Node2D" unique_id=1451326060]
+position = Vector2(1, 0)
 
-[node name="act1_01" parent="." unique_id=1678939227 instance=ExtResource("1_foke7")]
+[node name="Level_0" parent="." unique_id=1609284715 instance=ExtResource("1_r0vw5")]
+position = Vector2(-128, -240)
 
 [node name="CharacterBody2D" parent="." unique_id=909110901 instance=ExtResource("2_geum0")]
 position = Vector2(0, 168)
@@ -49,14 +51,13 @@ script = ExtResource("4_xph1i")
 zoom = Vector2(4.5, 4.5)
 fixed_position = Vector2(132, 104)
 limit_camera = true
-limit_left = -41.0
+limit_left = -40.0
 limit_top = -4.0
-limit_right = 304.0
+limit_right = 305.0
 limit_bottom = 212.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D" unique_id=785786628]
-visible = false
 position = Vector2(3.5, 0)
 shape = SubResource("RectangleShape2D_1bsl4")
 
@@ -68,14 +69,13 @@ zoom = Vector2(4, 4)
 follow_player = true
 fixed_position = Vector2(518, 210)
 limit_camera = true
-limit_left = 306.0
+limit_left = 307.0
 limit_top = -8.0
-limit_right = 730.0
+limit_right = 731.0
 limit_bottom = 462.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D2" unique_id=1070905733]
-visible = false
 position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_qkmes")
 debug_color = Color(0.77309716, 0.15027228, 0.9999998, 0.41960785)
@@ -88,14 +88,13 @@ zoom = Vector2(4, 4)
 follow_player = true
 fixed_position = Vector2(768, 560)
 limit_camera = true
-limit_left = 305.75
+limit_left = 306.75
 limit_top = 463.0
-limit_right = 774.0
+limit_right = 775.0
 limit_bottom = 657.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D3" unique_id=1940841345]
-visible = false
 position = Vector2(-228.125, 0)
 shape = SubResource("RectangleShape2D_gm2ak")
 debug_color = Color(0.640131, 0.52522147, 0, 0.41960785)
@@ -108,14 +107,13 @@ zoom = Vector2(4, 4)
 follow_player = true
 fixed_position = Vector2(983, 259)
 limit_camera = true
-limit_left = 776.5
+limit_left = 777.5
 limit_top = -139.0
-limit_right = 1189.5
+limit_right = 1190.5
 limit_bottom = 657.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D4" unique_id=1049397011]
-visible = false
 shape = SubResource("RectangleShape2D_fmmsx")
 debug_color = Color(0.909735, 0.29661667, 0, 0.41960785)
 
@@ -126,14 +124,13 @@ script = ExtResource("4_xph1i")
 zoom = Vector2(4, 4)
 follow_player = true
 limit_camera = true
-limit_left = -41.0
+limit_left = -40.0
 limit_top = 213.0
-limit_right = 304.0
+limit_right = 305.0
 limit_bottom = 657.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D5" unique_id=1525891034]
-visible = false
 position = Vector2(33.5, 12)
 shape = SubResource("RectangleShape2D_c3dre")
 debug_color = Color(1, 0.4745098, 1, 0.41960785)
@@ -145,21 +142,20 @@ script = ExtResource("4_xph1i")
 zoom = Vector2(4, 4)
 follow_player = true
 limit_camera = true
-limit_left = 104.0
+limit_left = 105.0
 limit_top = -224.0
-limit_right = 776.0
+limit_right = 777.0
 limit_bottom = 0.0
 metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D6" unique_id=121445298]
-visible = false
 position = Vector2(-72, -16)
 shape = SubResource("RectangleShape2D_n7phb")
 debug_color = Color(0.99239117, 0, 0.24511248, 0.41960785)
 
 [node name="DoorArea2D" parent="." unique_id=1499915062 instance=ExtResource("5_geum0")]
 position = Vector2(-112, 160)
-connectedRoom = "D:/GodotProjects/Godot2DPlatformer/Scenes/World/Levels/Act1/Level_02.tscn"
+connectedRoom = "res://Scenes/World/Levels/Act1/Level_02.tscn"
 playerPos = Vector2(96, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2D" unique_id=1177464753]

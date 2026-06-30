@@ -1,0 +1,115 @@
+{
+    "activeFile": "Zona1/ReglasGreen.tmx",
+    "automapping.whileDrawing": true,
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "Environment.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "ReglasZona1.tmx": {
+            "scale": 5.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 123.81818181818183,
+                "y": 32.18181818181818
+            }
+        },
+        "Zona1.tmx": {
+            "scale": 5.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 18.90909090909092,
+                "y": 6.9090909090909065
+            }
+        },
+        "Zona1/Environment.tsx": {
+            "scaleInDock": 1
+        },
+        "Zona1/ReglasGreen.tmx": {
+            "scale": 3,
+            "selectedLayer": 28,
+            "viewCenter": {
+                "x": 161.16666666666663,
+                "y": 225.33333333333331
+            }
+        },
+        "Zona1/ReglasZona1.tmx": {
+            "scale": 3,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 167.33333333333331,
+                "y": 137
+            }
+        },
+        "Zona1/ReglasZona1_1.tmx": {
+            "scale": 3.48828125,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 162.2575587905935,
+                "y": 80.55543113101905
+            }
+        },
+        "Zona1/ReglasZona1_2.tmx": {
+            "scale": 3.48828125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 127.85666293393058,
+                "y": 127.85666293393058
+            }
+        },
+        "Zona1/ReglasZona1_3.tmx": {
+            "scale": 3.48828125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 127.85666293393058,
+                "y": 127.85666293393058
+            }
+        },
+        "Zona1/Zona1.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 212.3333333333333,
+                "y": 114
+            }
+        },
+        "Zona1/level_blockout.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 11
+        }
+    },
+    "last.externalTilesetPath": "D:/GodotProjects/Godot2DPlatformer/Tiled",
+    "last.imagePath": "D:/GodotProjects/Godot2DPlatformer/Assets/Retro-Lines-16x16",
+    "map.fixedSize": false,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+        "Zona1/Zona1.tmx",
+        "Zona1/ReglasGreen.tmx"
+    ],
+    "project": "2Dplatformer.tiled-project",
+    "recentFiles": [
+        "Zona1/Zona1.tmx",
+        "Zona1/ReglasGreen.tmx",
+        "Environment.tsx",
+        "Zona1/level_blockout.tsx",
+        "Zona1/ReglasZona1_1.tmx",
+        "Zona1/ReglasZona1_3.tmx",
+        "Zona1/ReglasZona1_2.tmx",
+        "Zona1/ReglasZona1.tmx",
+        "Zona1.tmx",
+        "ReglasZona1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

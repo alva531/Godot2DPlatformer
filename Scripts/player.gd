@@ -14,10 +14,14 @@ var coyoteTimeActivated: bool = false
 
 @export var maxSpeed: float = 100
 @export var acceleration: float = 8
-@export var friction: float = 10
+@export var friction: float = 15
 
 @export var MAX_JUMPS: int = 2
 var jumpsDone: int = 0
+
+
+# SACAR SLIDE
+
 
 func _ready() -> void:
 	add_to_group("player")
@@ -48,8 +52,12 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.animation = "run"
 		else:
 			animated_sprite_2d.animation = "idle"
-			
+		
+		#var y_input: float = Input.get_action_strength("down")
 		if Input.is_action_just_pressed("down"):
+			
+			# MODIFICAR THRESHOLD A 0.5 DE DOWN O ALGO ASI
+			
 			set_collision_mask_value(5, false)
 			await get_tree().create_timer(0.2).timeout
 			set_collision_mask_value(5, true)

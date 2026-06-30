@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crxr1d1wjogtn"]
 
-[ext_resource type="PackedScene" uid="uid://fh582ig7j4hf" path="res://Scenes/World/Zones/Act1/act1_02.tscn" id="1_0mo07"]
 [ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_e4qq7"]
+[ext_resource type="PackedScene" uid="uid://txedomxl81ge" path="res://LDtk/levels/Level_1.scn" id="2_kjjwh"]
 [ext_resource type="Script" uid="uid://cxy0oaxvfn6vc" path="res://Scripts/RoomZoneArea2D.gd" id="3_joahx"]
 [ext_resource type="PackedScene" uid="uid://ciwfk1bgh0m3g" path="res://Scenes/Components/RoomZoneCamera2D.tscn" id="4_4xv1d"]
 [ext_resource type="PackedScene" uid="uid://p2hk12qbo5" path="res://Scenes/Components/DoorArea2D.tscn" id="5_4xv1d"]
@@ -20,7 +20,8 @@ size = Vector2(32, 32)
 
 [node name="Zone_02" type="Node2D" unique_id=1053461333]
 
-[node name="act1_02" parent="." unique_id=139764031 instance=ExtResource("1_0mo07")]
+[node name="Level_1" parent="." unique_id=1335236439 instance=ExtResource("2_kjjwh")]
+position = Vector2(-1056, -736)
 
 [node name="RoomZoneArea2D" type="Area2D" parent="." unique_id=1971743522]
 monitorable = false
@@ -54,6 +55,7 @@ metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D2" unique_id=830849428]
 position = Vector2(-532, -279.5)
 shape = SubResource("RectangleShape2D_4xv1d")
+debug_color = Color(0.54677147, 0.40417585, 1, 0.41960785)
 
 [node name="RoomZoneArea2D3" type="Area2D" parent="." unique_id=1476500537]
 position = Vector2(-776, -576)
@@ -71,6 +73,7 @@ metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZoneArea2D3" unique_id=1217089490]
 position = Vector2(136, 20)
 shape = SubResource("RectangleShape2D_454ho")
+debug_color = Color(0.786997, 0.43213525, 1.1551381e-06, 0.41960785)
 
 [node name="RoomZoneCamera2D" parent="." unique_id=99629313 instance=ExtResource("4_4xv1d")]
 position = Vector2(-101, -25)
@@ -79,10 +82,10 @@ position_smoothing_enabled = false
 
 [node name="DoorArea2D" parent="." unique_id=1499915062 instance=ExtResource("5_4xv1d")]
 position = Vector2(112, -32)
-connectedRoom = "D:/GodotProjects/Godot2DPlatformer/Scenes/World/Levels/Act1/Level_01.tscn"
+connectedRoom = "res://Scenes/World/Levels/Act1/Level_01.tscn"
 playerPos = Vector2(-64, 168)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2D" unique_id=121520812]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DoorArea2D" unique_id=121520812]
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_7ggw1")
 
