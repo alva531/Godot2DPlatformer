@@ -1,11 +1,14 @@
 {
-    "activeFile": "Zona1/ReglasGreen.tmx",
+    "activeFile": "Zona1/Zona1.tmx",
     "automapping.whileDrawing": true,
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Todos los archivos (*)",
     "fileStates": {
         ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "DebugLine.tsx": {
             "scaleInDock": 1
         },
         "Environment.tsx": {
@@ -33,10 +36,10 @@
         },
         "Zona1/ReglasGreen.tmx": {
             "scale": 3,
-            "selectedLayer": 28,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 161.16666666666663,
-                "y": 225.33333333333331
+                "x": 128.16666666666666,
+                "y": 256
             }
         },
         "Zona1/ReglasZona1.tmx": {
@@ -72,11 +75,11 @@
             }
         },
         "Zona1/Zona1.tmx": {
-            "scale": 1.5,
-            "selectedLayer": 0,
+            "scale": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 212.3333333333333,
-                "y": 114
+                "x": 256.5,
+                "y": 24
             }
         },
         "Zona1/level_blockout.tsx": {
@@ -85,7 +88,7 @@
         }
     },
     "last.externalTilesetPath": "D:/GodotProjects/Godot2DPlatformer/Tiled",
-    "last.imagePath": "D:/GodotProjects/Godot2DPlatformer/Assets/Retro-Lines-16x16",
+    "last.imagePath": "/home/alva531/GodotProjects/Godot2DPlatformer/Assets",
     "map.fixedSize": false,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
@@ -96,8 +99,8 @@
     ],
     "project": "2Dplatformer.tiled-project",
     "recentFiles": [
-        "Zona1/Zona1.tmx",
         "Zona1/ReglasGreen.tmx",
+        "Zona1/Zona1.tmx",
         "Environment.tsx",
         "Zona1/level_blockout.tsx",
         "Zona1/ReglasZona1_1.tmx",

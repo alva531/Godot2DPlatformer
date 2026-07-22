@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jokgcqymy8i"
-path="res://.godot/imported/ldtk-entity.svg-0e9e158ef8dc55d8602ffe476bdddfa3.ctex"
+uid="uid://rjfggvd7oxrm"
+path="res://.godot/imported/DebugLineTileset.png-d86dbbccdb416c0ebb3c6dda66b539a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ldtk-importer/src/components/ldtk-entity.svg"
-dest_files=["res://.godot/imported/ldtk-entity.svg-0e9e158ef8dc55d8602ffe476bdddfa3.ctex"]
+source_file="res://Assets/DebugLineTileset.png"
+dest_files=["res://.godot/imported/DebugLineTileset.png-d86dbbccdb416c0ebb3c6dda66b539a9.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

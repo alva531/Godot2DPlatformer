@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dd5mf2f3abn5j"]
 
-[ext_resource type="PackedScene" uid="uid://vc1oan1d5cyy" path="res://LDtk/levels/Level_0.scn" id="1_r0vw5"]
+[ext_resource type="PackedScene" uid="uid://bddogupyl3apo" path="res://Scenes/World/Zones/Act1/act1_01.tscn" id="1_geum0"]
 [ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_geum0"]
 [ext_resource type="PackedScene" uid="uid://ciwfk1bgh0m3g" path="res://Scenes/Components/RoomZoneCamera2D.tscn" id="3_r0vw5"]
 [ext_resource type="Script" uid="uid://cxy0oaxvfn6vc" path="res://Scripts/RoomZoneArea2D.gd" id="4_xph1i"]
-[ext_resource type="PackedScene" uid="uid://p2hk12qbo5" path="res://Scenes/Components/DoorArea2D.tscn" id="5_geum0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bsl4"]
 size = Vector2(345, 216)
@@ -24,14 +23,23 @@ size = Vector2(345, 444)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7phb"]
 size = Vector2(672, 224)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0vw5"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geum0"]
+size = Vector2(539, 553)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xph1i"]
+size = Vector2(546, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce4md"]
+size = Vector2(656, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_foke7"]
+size = Vector2(509, 355)
 
 [node name="LevelTest" type="Node2D" unique_id=1451326060]
 position = Vector2(1, 0)
 
-[node name="Level_0" parent="." unique_id=1609284715 instance=ExtResource("1_r0vw5")]
-position = Vector2(-128, -240)
+[node name="act1_01" parent="." unique_id=1678939227 instance=ExtResource("1_geum0")]
+position = Vector2(-1, 0)
 
 [node name="CharacterBody2D" parent="." unique_id=909110901 instance=ExtResource("2_geum0")]
 position = Vector2(0, 168)
@@ -153,10 +161,72 @@ position = Vector2(-72, -16)
 shape = SubResource("RectangleShape2D_n7phb")
 debug_color = Color(0.99239117, 0, 0.24511248, 0.41960785)
 
-[node name="DoorArea2D" parent="." unique_id=1499915062 instance=ExtResource("5_geum0")]
-position = Vector2(-112, 160)
-connectedRoom = "res://Scenes/World/Levels/Act1/Level_02.tscn"
-playerPos = Vector2(96, -24)
+[node name="RoomZoneArea2D7" type="Area2D" parent="RoomZones" unique_id=1615096206]
+position = Vector2(-177, 197)
+monitorable = false
+script = ExtResource("4_xph1i")
+zoom = Vector2(4.5, 4.5)
+follow_player = true
+limit_camera = true
+limit_left = -583.0
+limit_top = 63.5
+limit_right = -44.0
+limit_bottom = 616.5
+metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea2D" unique_id=1177464753]
-shape = SubResource("RectangleShape2D_r0vw5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D7" unique_id=755884280]
+position = Vector2(-137.5, 143)
+shape = SubResource("RectangleShape2D_geum0")
+
+[node name="RoomZoneArea2D8" type="Area2D" parent="RoomZones" unique_id=1919574299]
+position = Vector2(-353, 328.5)
+monitorable = false
+script = ExtResource("4_xph1i")
+zoom = Vector2(4, 4)
+follow_player = true
+limit_camera = true
+limit_left = -1132.0
+limit_top = -274.0
+limit_right = -586.0
+limit_bottom = 374.0
+metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D8" unique_id=38332594]
+position = Vector2(-507, -278.5)
+shape = SubResource("RectangleShape2D_xph1i")
+debug_color = Color(0.54677147, 0.40417585, 1, 0.41960785)
+
+[node name="RoomZoneArea2D9" type="Area2D" parent="RoomZones" unique_id=1625043986]
+position = Vector2(-953, -379)
+monitorable = false
+script = ExtResource("4_xph1i")
+zoom = Vector2(4, 4)
+follow_player = true
+limit_camera = true
+limit_left = -1144.0
+limit_top = -443.0
+limit_right = -488.0
+limit_bottom = -275.0
+metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D9" unique_id=1112493257]
+position = Vector2(136, 20)
+shape = SubResource("RectangleShape2D_ce4md")
+debug_color = Color(0.786997, 0.43213525, 1.1551381e-06, 0.41960785)
+
+[node name="RoomZoneArea2D10" type="Area2D" parent="RoomZones" unique_id=2095537942]
+position = Vector2(-777, -672)
+monitorable = false
+script = ExtResource("4_xph1i")
+zoom = Vector2(4, 4)
+limit_camera = true
+limit_left = -821.0
+limit_top = -866.0
+limit_right = -312.0
+limit_bottom = -511.0
+metadata/_custom_type_script = "uid://cxy0oaxvfn6vc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomZones/RoomZoneArea2D10" unique_id=750026698]
+position = Vector2(209.5, -16.5)
+shape = SubResource("RectangleShape2D_foke7")
+debug_color = Color(0.786997, 0.43213525, 1.1551381e-06, 0.41960785)
