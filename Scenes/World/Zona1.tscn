@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c2iwli0fj38ug" path="res://Tiled/Zona1/Zona1.tmx" id="1_fi2c7"]
 [ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_1kh30"]
 
-[node name="Zona1" unique_id=400892511 instance=ExtResource("1_fi2c7")]
+[node name="Zona1" unique_id=1797742075 instance=ExtResource("1_fi2c7")]
 
 [node name="CharacterBody2D" parent="." index="2" unique_id=909110901 instance=ExtResource("2_1kh30")]
 position = Vector2(216, 88)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dd5mf2f3abn5j"]
 
-[ext_resource type="PackedScene" uid="uid://bddogupyl3apo" path="res://Scenes/World/Zones/Act1/act1_01.tscn" id="1_geum0"]
 [ext_resource type="PackedScene" uid="uid://caygih315h4mq" path="res://Scenes/Components/Player.tscn" id="2_geum0"]
+[ext_resource type="PackedScene" uid="uid://c2iwli0fj38ug" path="res://Tiled/Zona1/Zona1.tmx" id="2_r0vw5"]
 [ext_resource type="PackedScene" uid="uid://ciwfk1bgh0m3g" path="res://Scenes/Components/RoomZoneCamera2D.tscn" id="3_r0vw5"]
 [ext_resource type="Script" uid="uid://cxy0oaxvfn6vc" path="res://Scripts/RoomZoneArea2D.gd" id="4_xph1i"]
 
@@ -38,8 +38,8 @@ size = Vector2(509, 355)
 [node name="LevelTest" type="Node2D" unique_id=1451326060]
 position = Vector2(1, 0)
 
-[node name="act1_01" parent="." unique_id=1678939227 instance=ExtResource("1_geum0")]
-position = Vector2(-1, 0)
+[node name="Zona1" parent="." unique_id=226295832 instance=ExtResource("2_r0vw5")]
+position = Vector2(-81, 176)
 
 [node name="CharacterBody2D" parent="." unique_id=909110901 instance=ExtResource("2_geum0")]
 position = Vector2(0, 168)
